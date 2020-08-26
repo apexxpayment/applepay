@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data">
+        <observer name="applepay_payment_gateway_data_assign"
+                  instance="Apexx\Applepay\Observer\DataAssignObserver" />
+    </event>
+    <!-- Restrict Applepay Payment method depends on currency -->
+    <event name="payment_method_is_active">
+        <observer name="restrict_applepay_payment_currency" instance="Apexx\Applepay\Observer\DisabledApplepayCurrency" />
+    </event>
+     <!-- Set status -->
+      <event name="sales_order_place_after">
+        <observer name="apexx_applepay_payment_place_order_after" instance="Apexx\Applepay\Observer\OrderObserver" />
+    </event>
+</config>

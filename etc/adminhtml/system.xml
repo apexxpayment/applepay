@@ -1,0 +1,68 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="apexx_section">
+                <group id="apexxpayment">
+                    <group id="applepay_gateway" translate="label" type="text" sortOrder="12"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Applepay Settings</label>
+                        <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1"
+                               showInWebsite="1" showInStore="0">
+                            <label>Enabled</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/applepay_gateway/active</config_path>
+                        </field>
+                        <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1"
+                               showInWebsite="1" showInStore="1">
+                            <label>Title</label>
+                            <config_path>payment/applepay_gateway/title</config_path>
+                        </field>
+                        <field id="payment_action" translate="label" type="select" sortOrder="4"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment Action</label>
+                            <source_model>Apexx\Applepay\Model\Adminhtml\Source\PaymentAction</source_model>
+                            <config_path>payment/applepay_gateway/payment_action</config_path>
+                        </field>
+                        <field id="webhook_transaction_update" translate="label" type="text" sortOrder="5"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Webhook Transaction URL</label>
+                        </field>
+                        <field id="date_of_birth" translate="label" type="text" sortOrder="6"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Date of Birth</label>
+                        </field>
+                        <field id="dynamic_descriptor" translate="label" type="text" sortOrder="7"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Dynamic Descriptor</label>
+                            <config_path>payment/applepay_gateway/dynamic_descriptor</config_path>
+                        </field>
+                        <field id="shopper_interaction" translate="label" type="text" sortOrder="8"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Shopper Interaction</label>
+                            <config_path>payment/applepay_gateway/shopper_interaction</config_path>
+                        </field>
+                        <field id="three_d_status" translate="label" type="select" sortOrder="9"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>3DS Preference</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="recurring_type" translate="label" type="text" sortOrder="10"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Recurring Type</label>
+                        </field>
+                         <field id="sort_order" translate="label" type="text" sortOrder="18" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Sort Order</label>
+                            <frontend_class>validate-number</frontend_class>
+                            <config_path>payment/applepay_gateway/sort_order</config_path>
+                        </field>
+                        <field id="allow" translate="label" type="multiselect" sortOrder="19" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Allowed Currencies</label>
+                            <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                            <backend_model>Magento\Config\Model\Config\Backend\Currency\Allow</backend_model>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>
