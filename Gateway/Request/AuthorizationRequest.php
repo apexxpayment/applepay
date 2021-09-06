@@ -90,7 +90,7 @@ class AuthorizationRequest implements BuilderInterface {
             "capture_now" => $this->applepayHelper->getApplepayPaymentAction(),
             "customer_ip" => $order->getRemoteIp(),
             "dynamic_descriptor" => $this->applepayHelper->getDynamicDescriptor(),
-            "merchant_reference" => 'JOURNEYBOX'.$order->getOrderIncrementId(),
+            "merchant_reference" => $this->apexxBaseHelper->getStoreCode().$order->getOrderIncrementId(),
             "recurring_type" => $this->applepayHelper->getRecurringType(),
             "user_agent" => $this->apexxBaseHelper->getUserAgent(),
             "webhook_transaction_update" => $this->applepayHelper->getWebhookUrl(),
